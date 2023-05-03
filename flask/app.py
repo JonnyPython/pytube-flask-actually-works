@@ -38,8 +38,8 @@ def downloadVideo():
 	if request.method == 'POST' and 'video_url' in request.form:
 		url = request.form["video_url"]
 		yt=YouTube(url)
-		YouTube(url).streams.filter(only_audio=True)
-		stream=yt.streams.get_by_itag(251)
+		YouTube(url).streams.filter(file_extension='mp4')
+		stream=yt.streams.get_by_itag(18)
 		stream.download()
 		
 		
