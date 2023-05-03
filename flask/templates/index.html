@@ -1,5 +1,6 @@
 <html>
 <head>
+<div class="p-3 mb-2 bg-dark text-white">
     <Title>YouTube Downloader Python</Title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +47,7 @@
             
 
     <div class="container mt-3">
-        <h2>YouTube Audio Downloader</h2>
+        <h2>YouTube Playlist Downloader</h2>
         <form action="/download" method="post">
             {% if mesage is defined and mesage %}
                 {% if errorType is defined and errorType %}
@@ -56,16 +57,17 @@
                 {% endif %}
             {% endif %}
             <div class="mb-3 mt-3">
-                <label for="video_url">Enter YouTube Video Url:</label>
+                <label for="video_url">Enter YouTube Playlist Url:</label>
                 <input type="text" class="form-control" id="video_url" placeholder="Enter url" name="video_url">
             </div>          
-            <button type="submit" class="btn btn-primary">Download</button>
+            <button type="submit" class="btn btn-danger">Download</button>
         </form>
       </div>
     <br><br>
     
     
 {% block content %}
+
 <h1>{% block title %} Recent Downloads {% endblock %}</h1>
     {% for site in sites %}
         <div class='site'>
@@ -73,6 +75,9 @@
             <i><p>Added {{ site[1] }}</p></i>
         </div>
     {% endfor %}
+    
 {% endblock %}
+
 </body>
+</div>
 </html>

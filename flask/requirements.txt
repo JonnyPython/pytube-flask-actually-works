@@ -1,3 +1,2 @@
-flask
-pytube
-postgresql
+pip install flask
+pip install pytube

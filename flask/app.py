@@ -37,13 +37,17 @@ def downloadVideo():
 	
 	if request.method == 'POST' and 'video_url' in request.form:
 		url = request.form["video_url"]
+		"""
 		yt=YouTube(url)
 		YouTube(url).streams.filter(file_extension='mp4')
 		stream=yt.streams.get_by_itag(18)
 		stream.download()
+		"""
+		p=Playlist(url)
+		for video in p.videos:
+			video.streams.last().download()
 		
 		
-		#url=urllib.parse.quote_plus(url)
 		url=str(url)
 		print(url)
 		conn = get_db_connection()
@@ -54,7 +58,7 @@ def downloadVideo():
 		conn.commit()
 		cur.close()
 		conn.close()
-		return redirect(url_for('index'))
+		#return redirect(url_for('index'))
 		
 		
 		
