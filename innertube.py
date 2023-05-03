@@ -1,5 +1,4 @@
 """This module is designed to interact with the innertube API.
-
 This module is NOT intended to be used directly by end users, as each of the
 interfaces returns raw results. These should instead be parsed to extract
 the useful information for the end user.
@@ -36,37 +35,182 @@ _default_clients = {
                 'clientVersion': '2.20200720.00.02'
             }
         },
+        'header': {
+            'User-Agent': 'Mozilla/5.0'
+        },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
     },
     'ANDROID': {
         'context': {
             'client': {
                 'clientName': 'ANDROID',
-                'clientVersion': '16.20'
+                'clientVersion': '17.31.35',
+                'androidSdkVersion': 30
             }
+        },
+        'header': {
+            'User-Agent': 'com.google.android.youtube/',
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
     },
+    'IOS': {
+        'context': {
+            'client': {
+                'clientName': 'IOS',
+                'clientVersion': '17.33.2',
+                'deviceModel': 'iPhone14,3'
+            }
+        },
+        'header': {
+            'User-Agent': 'com.google.ios.youtube/'
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
+
     'WEB_EMBED': {
         'context': {
             'client': {
-                'clientName': 'WEB',
+                'clientName': 'WEB_EMBEDDED_PLAYER',
                 'clientVersion': '2.20210721.00.00',
                 'clientScreen': 'EMBED'
             }
+        },
+        'header': {
+            'User-Agent': 'Mozilla/5.0'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
     },
     'ANDROID_EMBED': {
         'context': {
             'client': {
-                'clientName': 'ANDROID',
-                'clientVersion': '16.20',
-                'clientScreen': 'EMBED'
+                'clientName': 'ANDROID_EMBEDDED_PLAYER',
+                'clientVersion': '17.31.35',
+                'clientScreen': 'EMBED',
+                'androidSdkVersion': 30,
             }
         },
+        'header': {
+            'User-Agent': 'com.google.android.youtube/'
+        },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
-    }
+    },
+    'IOS_EMBED': {
+        'context': {
+            'client': {
+                'clientName': 'IOS_MESSAGES_EXTENSION',
+                'clientVersion': '17.33.2',
+                'deviceModel': 'iPhone14,3'
+            }
+        },
+        'header': {
+            'User-Agent': 'com.google.ios.youtube/'
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
+
+    'WEB_MUSIC': {
+        'context': {
+            'client': {
+                'clientName': 'WEB_REMIX',
+                'clientVersion': '1.20220727.01.00',
+            }
+        },
+        'header': {
+            'User-Agent': 'Mozilla/5.0'
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
+    'ANDROID_MUSIC': {
+        'context': {
+            'client': {
+                'clientName': 'ANDROID_MUSIC',
+                'clientVersion': '5.16.51',
+                'androidSdkVersion': 30
+            }
+        },
+        'header': {
+            'User-Agent': 'com.google.android.apps.youtube.music/'
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
+    'IOS_MUSIC': {
+        'context': {
+            'client': {
+                'clientName': 'IOS_MUSIC',
+                'clientVersion': '5.21',
+                'deviceModel': 'iPhone14,3'
+            }
+        },
+        'header': {
+            'User-Agent': 'com.google.ios.youtubemusic/'
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
+
+    'WEB_CREATOR': {
+        'context': {
+            'client': {
+                'clientName': 'WEB_CREATOR',
+                'clientVersion': '1.20220726.00.00',
+            }
+        },
+        'header': {
+            'User-Agent': 'Mozilla/5.0'
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
+    'ANDROID_CREATOR': {
+        'context': {
+            'client': {
+                'clientName': 'ANDROID_CREATOR',
+                'clientVersion': '22.30.100',
+                'androidSdkVersion': 30,
+            }
+        },
+        'header': {
+            'User-Agent': 'com.google.android.apps.youtube.creator/',
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
+    'IOS_CREATOR': {
+        'context': {
+            'client': {
+                'clientName': 'IOS_CREATOR',
+                'clientVersion': '22.33.101',
+                'deviceModel': 'iPhone14,3',
+            }
+        },
+        'header': {
+            'User-Agent': 'com.google.ios.ytcreator/'
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
+
+    'MWEB': {
+        'context': {
+            'client': {
+                'clientName': 'MWEB',
+                'clientVersion': '2.20220801.00.00',
+            }
+        },
+        'header': {
+            'User-Agent': 'Mozilla/5.0'
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
+
+    'TV_EMBED': {
+        'context': {
+            'client': {
+                'clientName': 'TVHTML5_SIMPLY_EMBEDDED_PLAYER',
+                'clientVersion': '2.0',
+            }
+        },
+        'header': {
+            'User-Agent': 'Mozilla/5.0'
+        },
+        'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'
+    },
 }
 _token_timeout = 1800
 _cache_dir = pathlib.Path(__file__).parent.resolve() / '__cache__'
@@ -75,9 +219,8 @@ _token_file = os.path.join(_cache_dir, 'tokens.json')
 
 class InnerTube:
     """Object for interacting with the innertube API."""
-    def __init__(self, client='WEB', use_oauth=False, allow_cache=True):
+    def __init__(self, client='ANDROID_MUSIC', use_oauth=False, allow_cache=True):
         """Initialize an InnerTube object.
-
         :param str client:
             Client to use for the object.
             Default to web because it returns the most playback types.
@@ -87,6 +230,7 @@ class InnerTube:
             Allows caching of oauth tokens on the machine.
         """
         self.context = _default_clients[client]['context']
+        self.header = _default_clients[client]['header']
         self.api_key = _default_clients[client]['api_key']
         self.access_token = None
         self.refresh_token = None
@@ -124,7 +268,6 @@ class InnerTube:
 
     def refresh_bearer_token(self, force=False):
         """Refreshes the OAuth token if necessary.
-
         :param bool force:
             Force-refresh the bearer token.
         """
@@ -239,6 +382,8 @@ class InnerTube:
                 self.fetch_bearer_token()
                 headers['Authorization'] = f'Bearer {self.access_token}'
 
+        headers.update(self.header)
+
         response = request._execute_request(
             endpoint_url,
             'POST',
@@ -249,7 +394,6 @@ class InnerTube:
 
     def browse(self):
         """Make a request to the browse endpoint.
-
         TODO: Figure out how we can use this
         """
         # endpoint = f'{self.base_url}/browse'  # noqa:E800
@@ -258,7 +402,6 @@ class InnerTube:
 
     def config(self):
         """Make a request to the config endpoint.
-
         TODO: Figure out how we can use this
         """
         # endpoint = f'{self.base_url}/config'  # noqa:E800
@@ -267,7 +410,6 @@ class InnerTube:
 
     def guide(self):
         """Make a request to the guide endpoint.
-
         TODO: Figure out how we can use this
         """
         # endpoint = f'{self.base_url}/guide'  # noqa:E800
@@ -276,7 +418,6 @@ class InnerTube:
 
     def next(self):
         """Make a request to the next endpoint.
-
         TODO: Figure out how we can use this
         """
         # endpoint = f'{self.base_url}/next'  # noqa:E800
@@ -285,7 +426,6 @@ class InnerTube:
 
     def player(self, video_id):
         """Make a request to the player endpoint.
-
         :param str video_id:
             The video id to get player info for.
         :rtype: dict
@@ -301,7 +441,6 @@ class InnerTube:
 
     def search(self, search_query, continuation=None):
         """Make a request to the search endpoint.
-
         :param str search_query:
             The query to search.
         :rtype: dict
@@ -321,11 +460,9 @@ class InnerTube:
 
     def verify_age(self, video_id):
         """Make a request to the age_verify endpoint.
-
         Notable examples of the types of video this verification step is for:
         * https://www.youtube.com/watch?v=QLdAhwSBZ3w
         * https://www.youtube.com/watch?v=hc0ZDaAZQT0
-
         :param str video_id:
             The video id to get player info for.
         :rtype: dict
@@ -347,7 +484,6 @@ class InnerTube:
 
     def get_transcript(self, video_id):
         """Make a request to the get_transcript endpoint.
-
         This is likely related to captioning for videos, but is currently untested.
         """
         endpoint = f'{self.base_url}/get_transcript'
